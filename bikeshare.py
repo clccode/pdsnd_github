@@ -172,6 +172,7 @@ def user_stats(df):
         pass
 
     # TO DO: Display earliest, most recent, and most common year of birth
+    # Min, max, and mode methods will do this
     if 'Birth Year' in df.columns:
         max_year = df['Birth Year'].min()
         print(f'The oldest customer was born in {int(max_year)}.')
@@ -201,6 +202,7 @@ def main():
         user_stats(df)
 
         # Asks the user if he/she would like to see raw data 5 rows at a time.
+        # The .lower() method will accept the user input even if it's capitalized.
         i = 0
         raw_data = input("\nWould you like to see the raw data 5 rows at a time? Please answer yes or no: \n").lower()
 

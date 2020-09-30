@@ -7,6 +7,9 @@ Project Title: Bikeshare Data
 ### Description
 This project examines data from bike sharing services in three cities: Chicago, New York City, and Washington, D.C.
 
+It examines data for the first half of the year for the three cities:
+--January, February, March, April, May, and June
+
 ### Files used
 Files included:
 --bikeshare.py
