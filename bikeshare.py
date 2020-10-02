@@ -2,10 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': '/Users/campbellcl/OneDrive/python/bikeshare-2/chicago.csv',
-              'new york city': '/Users/campbellcl/OneDrive/python/bikeshare-2/new_york_city.csv',
-              'washington': '/Users/campbellcl/OneDrive/python/bikeshare-2/washington.csv' }
-            #above files show location on my local drive.
+CITY_DATA = { 'chicago': 'chicago.csv',
+              'new york city': 'new_york_city.csv',
+              'washington': 'washington.csv' }
+            
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -38,12 +38,12 @@ def get_filters():
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input("Day: please select Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all (upper or lower case): ").lower()
+        day = input("Day: Please select a day of the week or or you may select all (upper or lower case): ").lower()
         if day in ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]:
             print(f"You chose {day.title()}.")
             break
         else:
-            print("Sorry, that's not a valid selection. Please try again.")
+            print("Sorry, that's an invalid selection. Please try again.")
 
     print('-'*40)
     return city, month, day
@@ -174,14 +174,14 @@ def user_stats(df):
     # TO DO: Display earliest, most recent, and most common year of birth
     # Min, max, and mode methods will do this
     if 'Birth Year' in df.columns:
-        max_year = df['Birth Year'].min()
-        print(f'The oldest customer was born in {int(max_year)}.')
+        oldest = df['Birth Year'].min()
+        print(f'The oldest customer was born in {int(oldest)}.')
 
-        min_year = df['Birth Year'].max()
-        print(f'The youngest customer was born in {int(min_year)}.')
+        youngest = df['Birth Year'].max()
+        print(f'The youngest customer was born in {int(youngest)}.')
 
-        most_year = df['Birth Year'].mode()
-        print(f'Most of the customers were born in {int(most_year)}.')
+        most_common = df['Birth Year'].mode()
+        print(f'Most of the customers were born in {int(most_common)}.')
 
     else:
         pass
